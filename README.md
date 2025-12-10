@@ -53,3 +53,49 @@ The `Accordion` and `AccordionItem` components provide a fully accessible, reusa
   <AccordionItem title="Second Item">Content 2</AccordionItem>
 </Accordion>
 ```
+
+# AccordionItem
+
+A fully **accessible React accordion item** supporting keyboard navigation, ARIA attributes, and customizable heading levels.
+
+## Features
+
+- Toggle content visibility with click or keyboard (Enter/Space)
+- Screen reader friendly (ARIA roles and properties)
+- Customizable header and content styles
+- Supports any heading level (`h1`–`h6`)
+- Smooth open/close transitions
+
+---
+
+## Props
+
+| Prop Name          | Type                                           | Description                                    | Required |
+| ------------------ | ---------------------------------------------- | ---------------------------------------------- | -------- |
+| `title`            | `string`                                       | Text displayed in the accordion header         | ✅       |
+| `children`         | `ReactNode`                                    | Content displayed inside the accordion panel   | ✅       |
+| `headerClassName`  | `string`                                       | Optional CSS classes for the header button     | ❌       |
+| `contentClassName` | `string`                                       | Optional CSS classes for the content container | ❌       |
+| `headingLevel`     | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | HTML heading level for the accordion header    | ✅       |
+
+---
+
+## Usage
+
+```tsx
+import { AccordionItem } from "@/components/AccordionItem";
+
+export default function Example() {
+  return (
+    <div className="max-w-md mx-auto">
+      <AccordionItem title="Section 1" headingLevel="h2">
+        <p>This is the content of section 1.</p>
+      </AccordionItem>
+
+      <AccordionItem title="Section 2" headingLevel="h2">
+        <p>This is the content of section 2.</p>
+      </AccordionItem>
+    </div>
+  );
+}
+```
